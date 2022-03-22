@@ -43,7 +43,7 @@ public class TweetController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tweets not found");
     }
 
-    @GetMapping("feed-tweets")
+    @GetMapping("feed")
     public ResponseEntity feed(@RequestHeader String authorization){
         List<String> hashtags = Arrays
                 .asList("openbanking", "remediation", "devops", "sre", "microservices", "observability", "oauth",
