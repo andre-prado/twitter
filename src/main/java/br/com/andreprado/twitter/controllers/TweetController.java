@@ -45,29 +45,12 @@ public class TweetController {
 
     @GetMapping("feed")
     public ResponseEntity feed(@RequestHeader String authorization){
-        List<String> hashtags = Arrays
-                .asList("openbanking", "remediation", "devops", "sre", "microservices", "observability", "oauth",
-                        "metrics", "logmonitoring", "opentracing");
-
-        consumerService.clearDatabases();
-
-        for(String hashtag : hashtags) {
-            System.out.println("Armazenando hashtag " + hashtag);
-            var twitterApiResponseModel = consumerService.consumeApi(hashtag, authorization);
-            var users = twitterApiResponseModel.getIncludes().getUsers();
-            var tweets = twitterApiResponseModel.getData();
-            List<UserMetricsModel> metrics = new ArrayList<UserMetricsModel>();
-
-            if(twitterApiResponseModel != null) {
-                for (UserModel user : users) {
-                    metrics.add(user.getPublicMetrics());
-                }
-
-                tweetRepository.saveAll(tweets);
-                metricsRepository.saveAll(metrics);
-                userRepository.saveAll(users);
-            }
+        try {
+            consumerService.clearDatabases();
+            consumerService.saveData(authorization);
+            return ResponseEntity.status(HttpStatus.OK).body("Data about hashtags was stored");
+        } catch (Exception exception) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception.getCause());
         }
-        return ResponseEntity.status(HttpStatus.OK).body("You database is feed");
     }
 }

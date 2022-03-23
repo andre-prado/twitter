@@ -14,6 +14,8 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -61,7 +63,30 @@ public class TwitterApiConsumerService {
         metricsRepository.deleteAll();
     }
 
-//    public List<UserMetricsModel> getMetricsFromUsers(List<UserModel> users) {
-//
-//    }
+    public List<String> getHashtags() {
+        List<String> hashtags = Arrays.asList("openbanking", "remediation", "devops", "sre", "microservices", "observability", "oauth", "metrics", "logmonitoring", "opentracing");
+        return hashtags;
+    }
+
+    public void saveData(String authorization) {
+        var hashtags = this.getHashtags();
+
+        for(String hashtag : hashtags) {
+            System.out.println("Armazenando hashtag " + hashtag);
+            var twitterApiResponseModel = this.consumeApi(hashtag, authorization);
+            var users = twitterApiResponseModel.getIncludes().getUsers();
+            var tweets = twitterApiResponseModel.getData();
+            List<UserMetricsModel> metrics = new ArrayList<UserMetricsModel>();
+
+            if(twitterApiResponseModel != null) {
+                for (UserModel user : users) {
+                    metrics.add(user.getPublicMetrics());
+                }
+
+                tweetRepository.saveAll(tweets);
+                metricsRepository.saveAll(metrics);
+                userRepository.saveAll(users);
+            }
+        }
+    }
 }
