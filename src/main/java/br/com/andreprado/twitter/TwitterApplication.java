@@ -12,9 +12,4 @@ public class TwitterApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TwitterApplication.class, args);
 	}
-
-	@GetMapping("/")
-	public String hello() {
-		return "hello";
-	}
 }
