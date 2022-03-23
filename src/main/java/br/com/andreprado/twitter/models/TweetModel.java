@@ -13,15 +13,27 @@ public class TweetModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID internalId;
 
+    @JsonProperty("tweet_id")
+    private String id;
+
     @JsonProperty("text")
     @Column(length = 1000)
     private String text;
     @JsonProperty("author_id")
     private String authorId;
-    @JsonProperty("id")
-    private String id;
+
     @JsonProperty("lang")
     private String lang;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
 
     public String getText() {
         return text;
@@ -37,14 +49,6 @@ public class TweetModel {
 
     public void setAuthorId(String authorId) {
         this.authorId = authorId;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getLang() {

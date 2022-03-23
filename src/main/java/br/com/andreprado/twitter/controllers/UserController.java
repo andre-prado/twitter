@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class UserController {
     final UserService service;
@@ -21,7 +23,7 @@ public class UserController {
         this.metricsRepository = metricsRepository;
     }
 
-    @GetMapping("user/top-five")
+    @GetMapping("users/top-five")
     public ResponseEntity getTopFive() {
         return ResponseEntity.status(HttpStatus.OK).body(service.getTopFive());
     }

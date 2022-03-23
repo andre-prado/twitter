@@ -3,6 +3,7 @@ package br.com.andreprado.twitter.models;
 import com.fasterxml.jackson.annotation.JsonAlias;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity

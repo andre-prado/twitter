@@ -83,9 +83,9 @@ public class TwitterApiConsumerService {
                     metrics.add(user.getPublicMetrics());
                 }
 
-                tweetRepository.saveAll(tweets);
                 metricsRepository.saveAll(metrics);
                 userRepository.saveAll(users);
+                tweetRepository.saveAll(tweets);
             }
         }
     }
