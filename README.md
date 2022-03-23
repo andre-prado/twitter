@@ -35,3 +35,37 @@ docker compose up
 ```
 
 Se tudo ocorrer bem, a aplicação estará no ar! :)
+
+## Testando a aplicação
+
+### Postman
+
+Para rodar a aplicação podemos fazer uso do Postman.
+
+### /feed
+
+A primeira rota que precisamos acessar é a rota **/feed**.
+
+*É necessário informar no Header o Authorization passando o bearer token*
+
+*O bearer token também foi informado no e-mail*
+
+![feed](https://user-images.githubusercontent.com/49701005/159703051-c6a23f14-27a6-4e6e-8b2a-b5fe04d1f3b8.PNG)
+
+Esta rota é responsável por preencher o banco de dados com informações sobre as hashtags que foram estabelidas internamente no sistema.
+
+### /top-five
+
+A segunda rota que podemos chamar é a rota **/users/top-five**
+
+*É necessário informar no Header o Authorization passando o bearer token*
+
+*O bearer token também foi informado no e-mail*
+
+![top-five](https://user-images.githubusercontent.com/49701005/159705337-42fe5aa8-5159-4d54-bc9d-6760cc95822b.PNG)
+
+Esta rota tras os 5 usuários com mais seguidores dentre os usuários coletados através das hashtags.
+
+Se essa a rota **/users/top-five** for chamada antes da rota **/feed**
+a resposta será uma lista vazia.
+
