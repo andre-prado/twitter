@@ -70,4 +70,13 @@ Esta rota retorna os 5 usuários com mais seguidores dentre os usuários coletad
 
 *Se a rota* **/users/top-five** *for chamada antes da rota* **/feed** *a resposta será uma lista vazia.*
 
+## Modelagem do banco de dados
+
+![ModelagemBD](https://user-images.githubusercontent.com/49701005/159817896-6ffcd48e-d743-4be8-bc49-a44d0f7028fc.png)
+
+## Modelo arquitetural
+### Tabela Tweets usada como exemplo
+
+![Modelo Arquitetural](https://user-images.githubusercontent.com/49701005/159818892-e7bafbbc-3e8b-4fba-bcd4-e52af4cb7782.png)
+
 
