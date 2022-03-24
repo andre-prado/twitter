@@ -80,3 +80,31 @@ Esta rota retorna os 5 usuários com mais seguidores dentre os usuários coletad
 ![Modelo Arquitetural](https://user-images.githubusercontent.com/49701005/159818892-e7bafbbc-3e8b-4fba-bcd4-e52af4cb7782.png)
 
 
+## Monitoramento com Spring Actuator e Sping Admin
+
+Este projeto utiliza o Spring Actuator para monitorar a aplicação 
+
+em conjunto com o Spring Admin. O Spring admin é uma aplicação que fica monitorando
+a aplicação principal, que no nosso caso é a aplicação do Twitter.
+
+### Acessando o Spring admin
+
+Com a aplicação rodando, podemos acessar a rota http://localhost:9090/
+
+Ao acessar este endpoint, somos redirecionados para a seguinte tela:
+
+![spring boot admin-1](https://user-images.githubusercontent.com/49701005/159914896-e2d9dbc9-0f1f-425c-a80f-5eff42782d06.PNG)
+
+Agora ao clicar em *spring-boot-aplication* vamos para a seguinte tela.
+
+![spring boot admin-2](https://user-images.githubusercontent.com/49701005/159915166-b93d2e0a-9630-446c-996a-049d186b838b.PNG)
+
+Agora podemos ter acesso a varios dados da aplicação. sinta-se a vontade para navegar e explorar o Spring Boot Admin.
+
+## Documentação com springdoc e swagger-ui
+
+Esta aplicação foi documentada com SpringDoc.
+
+Basta acessar a rota localhost:8080/swagger-ui/index.html para ser redirecionado para esta tela:
+
+![swagger-ui](https://user-images.githubusercontent.com/49701005/159915701-c8769f20-e2f3-434e-8a2b-243dd2ad701e.PNG)
