@@ -1,6 +1,6 @@
 # Twitter
 
-### Esta aplicação tem como objetivo coletar dados dos últimos 100 tweets para cada hashtag lista a baixo:
+### Esta aplicação tem como objetivo coletar dados dos últimos 100 tweets para cada hashtag listada a baixo:
 ### *#openbanking, #remediation, #devops, #sre, #microservices, #observability, #oauth, #metrics, #logmonitoring, #opentracing*
 
 ## Preparando o ambiente
