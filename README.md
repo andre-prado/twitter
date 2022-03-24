@@ -64,8 +64,10 @@ A segunda rota que podemos chamar é a rota **/users/top-five**
 
 ![top-five](https://user-images.githubusercontent.com/49701005/159705337-42fe5aa8-5159-4d54-bc9d-6760cc95822b.PNG)
 
-Esta rota tras os 5 usuários com mais seguidores dentre os usuários coletados através das hashtags.
+Esta rota retorna os 5 usuários com mais seguidores dentre os usuários coletados através das hashtags.
 
-Se essa a rota **/users/top-five** for chamada antes da rota **/feed**
-a resposta será uma lista vazia.
+![top-five-response](https://user-images.githubusercontent.com/49701005/159816195-c22e8315-b04d-4ac0-a491-c0034bf48995.PNG)
+
+*Se a rota* **/users/top-five** *for chamada antes da rota* **/feed** *a resposta será uma lista vazia.*
+
 
